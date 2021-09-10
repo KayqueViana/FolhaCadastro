@@ -1,7 +1,7 @@
 <section>
 
     <h3>
-        <span>Listar Clientes</span>
+    <i class="fa fa-users"></i><span>Listar Clientes</span>
     </h3>
 </section>
  <section class="content">
@@ -9,7 +9,7 @@
     <div class="box-header with-border">
         <div class="row margin-bottom-20">
             <div class="col-md-12 text-right">
-            <a href="Novo Cadastro" class="btn btn-sucess">Inserir Cliente</a>
+            <a href="criar_usuario.php" title="Novo Cadastro" class="btn btn-sucess"><i class="fa fa-plus-square"></i>Inserir Cliente</a>
             </div>
         </div>
     </div>
