@@ -9,7 +9,7 @@
     <div class="box-header with-border">
         <div class="row margin-bottom-20">
             <div class="col-md-12 text-right">
-            <a href="criar_usuario.php" title="Novo Cadastro" class="btn btn-sucess"><i class="fa fa-plus-square"></i>Inserir Cliente</a>
+            <a href="criarUsuario.php" title="Novo Cadastro" class="btn btn-sucess"><i class="fa fa-plus-square"></i>Inserir Cliente</a>
             </div>
         </div>
     </div>
@@ -22,6 +22,7 @@
                 <th class="text-center">EMAIL:</th>
                 <th class="text-center">TELEFONE:</th>
                 <th class="text-center">GENERO:</th>
+                <th>AÇÕES:</th>
             </tr>
         </thead>
         <tbody>
@@ -31,10 +32,9 @@
                 <td class="text-center">EMAIL:</td>
                 <td class="text-center">TELEFONE:</td>
                 <td class="text-center">GENERO:</td>
+                
             </tr>
-            <tr>
-                <td>AÇÕES:</td>
-            </tr>
+         
         </tbody>
     </table>
  </section>
