@@ -1,15 +1,20 @@
+@extends('layouts.main')
+
+@section('title', 'Lista de Usuários')
+@section('content')
+
 <section>
 
-    <h3>
-    <i class="fa fa-users"></i><span>Listar Clientes</span>
-    </h3>
+    <h2>
+    <i class="fa fa-users"></i><span>Listar Usuários</span>
+    </h2>
 </section>
  <section class="content">
     <div class="box">
     <div class="box-header with-border">
         <div class="row margin-bottom-20">
             <div class="col-md-12 text-right">
-            <a href="criarUsuario.php" title="Novo Cadastro" class="btn btn-sucess"><i class="fa fa-plus-square"></i>Inserir Cliente</a>
+            <a href="/criarUsuario" title="Novo Cadastro" class="btn btn-sucess"><i class="fa fa-plus-square"></i>Inserir Cliente</a>
             </div>
         </div>
     </div>
@@ -38,3 +43,4 @@
         </tbody>
     </table>
  </section>
+ @endsection

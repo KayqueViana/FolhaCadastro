@@ -1,11 +1,15 @@
  
- <?php include_once 'criar_usuario.php' ?>
+@extends('layouts.main')
+
+@section('title', 'Criar Usuário')
+@section('content')
  <section class="container">
     <div class="box">
         <div class="box-header">
             <div class="box-title">
                 <h2 class="text-center"><i class="fa fa-list"></i>Cadastrar Usuario</h2>
-            </div><hr/>
+            </div>
+            <hr/>
             <div class="box-body">
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class="row">
@@ -68,10 +72,12 @@
                             <button type="reset" name="reset" class='btn btn-alert'>Limpar</button>
                             <button type="submit" name='confirm' class="btn btn-sucess">Confirmar</button>
                          </div>
+                    </div>
                 </form>
 
-            </div>
         </div>
+    </div>
     </div>
     
  </section>
+ @endsection

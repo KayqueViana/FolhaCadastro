@@ -10,7 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Controllers\CadastroController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'CadastroController@index');
+Route::get('/criarUsuario', 'CadastroController@registro');
+Route::get('/clientes/listar_clientes', 'CadastroController@lista');

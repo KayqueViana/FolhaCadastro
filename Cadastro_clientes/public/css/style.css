@@ -1,0 +1,11 @@
+* {
+    font-family: 'Bona Nova', serif;
+}
+
+#navbar img {
+    width: 50px;
+}
+
+.navbar-nav {
+    font-weight: lighter;
+}
