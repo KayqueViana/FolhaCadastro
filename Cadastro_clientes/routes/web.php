@@ -12,6 +12,5 @@
 */
 use App\Http\Controllers\CadastroController;
 
-Route::get('/', 'CadastroController@index');
 Route::get('/criarUsuario', 'CadastroController@registro');
-Route::get('/clientes/listar_clientes', 'CadastroController@lista');
+Route::get('/', 'CadastroController@lista');

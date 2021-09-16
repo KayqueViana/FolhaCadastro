@@ -24,26 +24,28 @@
                 <div class="collapse navbar-collapse" id="navbar">
                     <a href="/" class="navbar-brand">
                      <img src="/img/R.png" alt="Cadastro">
+                    </a>
                         <ul class="navbar-nav">
                             <li class="nav-item"></li>
                             <li class="nav-item">
                                 <a href="/criarUsuario" class="nav-link">Cadastrar Usuário</a>
                             </li>
                             <li class="nav-item">
-                                <a href="/clientes/listar_clientes" class="nav-link">Lista de Usuários</a>
+                                <a href="/" class="nav-link">Lista de Usuários</a>
                             </li>
                             <li class="nav-item">
-                                <a href="/" class="nav-link">Página Inicial</a>
+                                <a href="/enderecos" class="nav-link">Página de Endereços</a>
                             </li>
                         </ul>
-                    </a>
                 </div>
             </nav>
         </header>
         @yield('content')
+    <div id="copy">
         <footer>
          <p>Folha de Cadastro &copy; 2021 - Kayque Viana</p>
         </footer>
+    </div>
         <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     </body>
 </html>

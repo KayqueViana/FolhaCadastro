@@ -9,7 +9,7 @@
             <div class="box-title">
                 <h2 class="text-center"><i class="fa fa-list"></i>Cadastrar Usuario</h2>
             </div>
-            <hr/>
+            <hr size="3" width="65%">
             <div class="box-body">
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class="row">
@@ -27,7 +27,7 @@
                         </div>
                         <div class="col-md-12">
                          <label for="phone">TELEFONE:</label>
-                         <input class="form-control" id="phone" name="phone" type="tel" required pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder="Digite seu telefone..." autofocus>
+                         <input class="form-control" id="phone" name="phone" type="tel" required placeholder="Digite seu telefone..." autofocus>
                         </div>
                         <div class="col-md-12">
                         <label for="gender">GENERO:</label>
@@ -66,7 +66,7 @@
                         </div>
                        
                     </div>
-                    <div class="row">
+                    <div class="row" id="buttons">
                         <div class="col text-right">
                             <a href="index.php" type="reset" class="btn btn-danger">Cancelar</a>
                             <button type="reset" name="reset" class='btn btn-alert'>Limpar</button>
