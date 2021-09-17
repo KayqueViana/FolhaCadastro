@@ -15,5 +15,5 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\CadastroController;
 
-Route::get('/criarUsuario', 'CadastroController@registro');
-Route::get('/', 'CadastroController@lista');
+Route::get('/criarUsuario', [CadastroController::class, 'registro']);
+Route::get('/', [CadastroController::class, 'lista']);
