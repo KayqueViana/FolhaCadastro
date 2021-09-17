@@ -1,0 +1,23 @@
+* {
+    font-family: 'Bona Nova', serif;
+}
+
+#navbar img {
+    width: 50px;
+}
+
+.navbar-nav {
+    font-weight: lighter;
+}
+
+#img{
+    margin-left: 20px;
+    float: left;
+}
+
+#copy {
+    margin-left: 20px;
+}
+#buttons {
+    margin-top: 10px;
+}
