@@ -14,7 +14,7 @@
     <div class="box-header with-border">
         <div class="row margin-bottom-20">
             <div class="col-md-12 text-right">
-            <a href="/criarUsuario" title="Novo Cadastro" class="btn btn-sucess"><i class="fa fa-plus-square"></i>Inserir Cliente</a>
+            <a href="/criarUsuario" title="Novo Cadastro"><i class="fa fa-plus-square"></i>Inserir Cliente</a>
             </div>
         </div>
     </div>
@@ -22,25 +22,27 @@
     <table class="table table-striped table-sl">
         <thead>
             <tr>
-                <th>NOME:</th>
+                <th class="text-center">NOME:</th>
                 <th class="text-center">SOBRENOME:</th>
                 <th class="text-center">EMAIL:</th>
                 <th class="text-center">TELEFONE:</th>
                 <th class="text-center">GENERO:</th>
-                <th>AÇÕES:</th>
+                <th class='text-center'>AÇÕES:</th>
             </tr>
         </thead>
+        @foreach ($clients as $client)
         <tbody>
             <tr>
-                <td>NOME:</td>
-                <td class="text-center">SOBRENOME:</td>
-                <td class="text-center">EMAIL:</td>
-                <td class="text-center">TELEFONE:</td>
-                <td class="text-center">GENERO:</td>
+                <td class='text-center'>{{$client->name}}</td>
+                <td class="text-center">{{$client->surname}}</td>
+                <td class="text-center">{{$client->email}}</td>
+                <td class="text-center">{{$client->cell}}</td>
+                <td class="text-center">{{$client->gender}}</td>
                 
             </tr>
          
         </tbody>
+        @endforeach
     </table>
  </section>
  @endsection

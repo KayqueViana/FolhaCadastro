@@ -3,11 +3,24 @@
 }
 
 #navbar img {
-    width: 50px;
+    width: 40px;
 }
 
 .navbar-nav {
     font-weight: lighter;
+}
+
+.navbar-nav {
+    padding: 5px 0;
+}
+
+#navbar a {
+    font-size: 15px;
+    color: #757575;
+}
+
+#navbar a:hover {
+    color: #F2A340;
 }
 
 #img{
@@ -20,4 +33,18 @@
 }
 #buttons {
     margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+    background-color: #353E48;
+    color: #fff;
+    padding: 30px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin-bottom: 0;
 }

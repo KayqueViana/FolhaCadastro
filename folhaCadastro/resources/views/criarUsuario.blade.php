@@ -1,6 +1,11 @@
 @extends('layouts.main')
 
 @section('title', 'Criar Usuário')
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#cell").mask((00) 00000-0000)
+    })
+</script>
 @section('content')
  <section class="container">
     <div class="box">
@@ -10,7 +15,8 @@
             </div>
             <hr size="3" width="65%">
             <div class="box-body">
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="/criarUsuario" method="post" enctype="multipart/form-data">
+                    @csrf
                     <div class="row">
                         <div class="col-md-12">
                          <label for="name">PRIMEIRO NOME:</label>
@@ -18,7 +24,7 @@
                         </div>
                         <div class="col-md-12">
                          <label for="sobrenome">SOBRENOME:</label>
-                         <input class="form-control" id="sobrenome" name="sobrenome" type="text" required placeholder="Digite seu sobrenome..." autofocus>
+                         <input class="form-control" id="surname" name="surname" type="text" required placeholder="Digite seu sobrenome..." autofocus>
                         </div>
                         <div class="col-md-12">
                          <label for="email">EMAIL:</label>
@@ -26,7 +32,7 @@
                         </div>
                         <div class="col-md-12">
                          <label for="phone">TELEFONE:</label>
-                         <input class="form-control" id="phone" name="phone" type="tel" required placeholder="Digite seu telefone..." autofocus>
+                         <input class="form-control" id="cell" name="cell" type="tel" required placeholder="Digite seu telefone..." autofocus>
                         </div>
                         <div class="col-md-12">
                         <label for="gender">GENERO:</label>
@@ -37,9 +43,9 @@
                          <td>Feminino</td>
                          </tr>
                          <tr>
-                             <td><input class="form-control" id="m" name="gender" type="radio" autofocus value="m"></td>
+                             <td><input class="form-control" id="m" name="gender" type="radio" autofocus value="0"></td>
                              <td>  |  </td>
-                             <td> <input class="form-control" id="f" name="gender" type="radio" autofocus value="f"></td>
+                             <td> <input class="form-control" id="f" name="gender" type="radio" autofocus value="1"></td>
                          </tr>
                            </table>
                         </div>
@@ -68,8 +74,8 @@
                     <div class="row" id="buttons">
                         <div class="col text-right">
                             <a href="index.php" type="reset" class="btn btn-danger">Cancelar</a>
-                            <button type="reset" name="reset" class='btn btn-alert'>Limpar</button>
-                            <button type="submit" name='confirm' class="btn btn-sucess">Confirmar</button>
+                            <button type="reset" name="clear" class='btn btn-primary'>Limpar</button>
+                            <button type="submit" name='confirm' class="btn btn-success">Confirmar</button>
                          </div>
                     </div>
                 </form>
