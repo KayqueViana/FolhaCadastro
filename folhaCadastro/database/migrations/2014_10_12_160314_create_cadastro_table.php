@@ -19,8 +19,8 @@ class CreateCadastroTable extends Migration
             $table->string('surname', 35);
             $table->string('email', 50);
             $table->string('cell', 35);
-            $table->boolean('gender');
-            $table->string('adress', 35);
+            $table->boolean('gender', 3);
+            $table->string('adress', 255);
             $table->timestamps();
         });
     }

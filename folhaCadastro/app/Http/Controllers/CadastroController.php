@@ -14,6 +14,13 @@ class CadastroController extends Controller
 
             return view("clientes.listar_clientes", ['clients' => $clients]);
     }
+
+    public function adress(){
+      
+      return view('adressPage');
+
+    }
+
    public function registro(){
 
     return view("criarUsuario");

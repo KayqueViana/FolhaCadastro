@@ -13,12 +13,18 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bona+Nova&display=swap" rel="stylesheet">
-        <!--CSS da aplicação-->
+        <!--Javascript da aplicação-->
         <link rel="stylesheet" href="/css/style.css">
-        <script src="/js/script.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="/js/consulta-end.js"></script>
+        <script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="/js/bootstrap.min.js"></script>
         <script type='text/javascript' src="/js/jquery.mask.min.js"></script>
-       
+        <script type="text/javascript">
+            $(document).ready(function(){         
+                $("#cell").mask("(00) 00000-0009")
+                $("#cep").mask("00.000-000")
+            })
+        </script>
     </head>
     <body>
        
@@ -37,7 +43,7 @@
                                 <a href="/" class="nav-link">Lista de Usuários</a>
                             </li>
                             <li class="nav-item">
-                                <a href="/enderecos" class="nav-link">Página de Endereços</a>
+                                <a href="/adressPage" class="nav-link">Página de Endereços</a>
                             </li>
                         </ul>
                 </div>

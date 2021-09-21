@@ -1,11 +1,7 @@
 @extends('layouts.main')
 
 @section('title', 'Criar Usuário')
-<script type="text/javascript">
-    $(document).ready(function(){
-        $("#cell").mask((00) 00000-0000)
-    })
-</script>
+
 @section('content')
  <section class="container">
     <div class="box">
@@ -43,31 +39,31 @@
                          <td>Feminino</td>
                          </tr>
                          <tr>
-                             <td><input class="form-control" id="m" name="gender" type="radio" autofocus value="0"></td>
+                             <td><input class="form-control" id="m" name="gender" type="radio" autofocus required value="0"></td>
                              <td>  |  </td>
-                             <td> <input class="form-control" id="f" name="gender" type="radio" autofocus value="1"></td>
+                             <td> <input class="form-control" id="f" name="gender" type="radio" autofocus required value="1"></td>
                          </tr>
                            </table>
                         </div>
                         <div class="col-md-4">
                          <label for="cep">CEP:</label>
-                         <input class="form-control" id="cep" name="cep" type="search" required placeholder="Digite seu cep..." autofocus>
+                         <input class="form-control" id="cep" name="cep" type="text" onblur="pesquisacep(this.value);" required placeholder="00.000-000..." autofocus>
                         </div>
                         <div class="col-md-4">
                          <label for="adress">RUA:</label>
-                         <input class="form-control" id="adress" name="adress" type="" required placeholder="Digite sua rua..." autofocus>
+                         <input class="form-control" id="adress" name="adress" type="text" required placeholder="Digite sua rua..." autofocus>
                         </div>
                         <div class="col-md-4">
                          <label for="neighborhood">BAIRRO:</label>
-                         <input class="form-control" id="neighborhood" name="neighborhood" type="" required placeholder="Digite seu bairro..." autofocus>
+                         <input class="form-control" id="neighborhood" name="neighborhood" type="text" required placeholder="Digite seu bairro..." autofocus>
                         </div>
                         <div class="col-md-12">
                          <label for="city">CIDADE:</label>
-                         <input class="form-control" id="city" name="city" type="" required placeholder="Digite sua cidade..." autofocus>
+                         <input class="form-control" id="city" name="city" type="text" required placeholder="Digite sua cidade..." autofocus>
                         </div>
                         <div class="col-md-12">
                          <label for="uf">ESTADO:</label>
-                         <input class="form-control" id="uf" name="uf" type="" required placeholder="Digite seu estado..." autofocus>
+                         <input class="form-control" id="uf" name="uf" type="text" required placeholder="Digite seu estado..." autofocus>
                         </div>
                        
                     </div>

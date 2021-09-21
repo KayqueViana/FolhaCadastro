@@ -14,7 +14,7 @@
     <div class="box-header with-border">
         <div class="row margin-bottom-20">
             <div class="col-md-12 text-right">
-            <a href="/criarUsuario" title="Novo Cadastro"><i class="fa fa-plus-square"></i>Inserir Cliente</a>
+            <a href="/criarUsuario" title="Novo Cadastro"><i class="fa fa-plus-square"></i>Inserir Clientes</a>
             </div>
         </div>
     </div>
@@ -27,6 +27,7 @@
                 <th class="text-center">EMAIL:</th>
                 <th class="text-center">TELEFONE:</th>
                 <th class="text-center">GENERO:</th>
+                <th class="text-center">CIDADE:</th>
                 <th class='text-center'>AÇÕES:</th>
             </tr>
         </thead>
@@ -38,6 +39,11 @@
                 <td class="text-center">{{$client->email}}</td>
                 <td class="text-center">{{$client->cell}}</td>
                 <td class="text-center">{{$client->gender}}</td>
+                <td class="text-center">
+                    <a href="/adressPage">
+                    <button class="btn btn-dark">Avaliar...</button>
+                </a>
+                </td>
                 
             </tr>
          

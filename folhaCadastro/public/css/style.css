@@ -45,6 +45,12 @@ footer {
     width: 100%;
 }
 
+
+
+.fa-users{
+       padding: 20px;
+}
+
 footer p {
     margin-bottom: 0;
 }
