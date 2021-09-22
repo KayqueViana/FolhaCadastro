@@ -12,7 +12,7 @@ class CadastroController extends Controller
 
         $clients = Client::all();
 
-            return view("clientes.listar_clientes", ['clients' => $clients]);
+            return view("clientes.listar_clientes", ['clients' => $clients])->with('msg2', 'Não há ninguem cadastrado aqui...');
     }
 
     public function adress(){
@@ -35,10 +35,21 @@ class CadastroController extends Controller
         $cliente->email = $request->email;
         $cliente->cell = $request->cell;
         $cliente->gender = $request->gender;
+        $cliente->text = $request->text;
+        $cliente->cep = $request->cep;
         $cliente->adress = $request->adress;
+        $cliente->neighborhood = $request->neighborhood;
+        $cliente->city = $request->city;
+        $cliente->uf = $request->uf;
 
         $cliente->save();
 
-        return redirect('/');
+        return redirect('/')->with('msg', 'Usuário cadastrado com sucesso!');
+      }
+      public function show($id){
+        
+        $client = Client::findOrFail($id);
+        return view('show', ['client' => $client]);
       }
 }
+

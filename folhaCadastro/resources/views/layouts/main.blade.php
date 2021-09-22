@@ -49,7 +49,14 @@
                 </div>
             </nav>
         </header>
-        @yield('content')
+      
+            <main>
+                    @if(session('msg'))
+                     <p class="msg">{{ session('msg') }}</p>
+                    @endif
+                    @yield('content')
+            </main>
+         
     <div id="copy">
         <footer>
          <p>Folha de Cadastro &copy; 2021 - Kayque Viana</p>

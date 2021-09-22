@@ -31,19 +31,16 @@
                          <input class="form-control" id="cell" name="cell" type="tel" required placeholder="Digite seu telefone..." autofocus>
                         </div>
                         <div class="col-md-12">
+                            <label for="text">UM POUCO SOBRE VOCÊ:</label>
+                            <input class="form-control" id="text" name="text" type="textarea" required placeholder="Digite uma mensagem legal..." autofocus>
+                           </div>
+                        <div class="col-md-12">
                         <label for="gender">GENERO:</label>
-                           <table>
-                            <tr>
-                         <td>Masculino</td> 
-                         <td>   |  </td>
-                         <td>Feminino</td>
-                         </tr>
-                         <tr>
-                             <td><input class="form-control" id="m" name="gender" type="radio" autofocus required value="0"></td>
-                             <td>  |  </td>
-                             <td> <input class="form-control" id="f" name="gender" type="radio" autofocus required value="1"></td>
-                         </tr>
-                           </table>
+                         <select name="gender" id="gender" class="form-control" required autofocus>
+                            <option value="0">Masculino</option>
+                            <option value="1">Feminino</option>
+                            <option value="2">Prefiro não informar</option>
+                         </select>
                         </div>
                         <div class="col-md-4">
                          <label for="cep">CEP:</label>

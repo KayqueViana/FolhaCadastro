@@ -22,13 +22,13 @@
     <table class="table table-striped table-sl">
         <thead>
             <tr>
-                <th class="text-center">NOME:</th>
-                <th class="text-center">SOBRENOME:</th>
-                <th class="text-center">EMAIL:</th>
-                <th class="text-center">TELEFONE:</th>
-                <th class="text-center">GENERO:</th>
-                <th class="text-center">CIDADE:</th>
-                <th class='text-center'>AÇÕES:</th>
+                <th class="text-center"><ion-icon name='list'></ion-icon>NOME:</th>
+                <th class="text-center"><ion-icon name='list'></ion-icon>SOBRENOME:</th>
+                <th class="text-center"><ion-icon name='at'></ion-icon>EMAIL:</th>
+                <th class="text-center"><ion-icon name='phone-portrait'></ion-icon>TELEFONE:</th>
+                <th class="text-center"><ion-icon name='people'></ion-icon>GENERO:</th>
+                <th class="text-center"><ion-icon name='information'></ion-icon>OUTRAS INFORMAÇÕES:</th>
+                <th class='text-center'><ion-icon name='construct'></ion-icon>AÇÕES:</th>
             </tr>
         </thead>
         @foreach ($clients as $client)
@@ -38,10 +38,16 @@
                 <td class="text-center">{{$client->surname}}</td>
                 <td class="text-center">{{$client->email}}</td>
                 <td class="text-center">{{$client->cell}}</td>
-                <td class="text-center">{{$client->gender}}</td>
+                @if($client->gender == 0)
+                <td class="text-center">M</td>
+                @elseif($client->gender == 1)
+                <td class="text-center">F</td>              
+                @else
+                <td class="text-center">Não Informado</td>
+                @endif
                 <td class="text-center">
-                    <a href="/adressPage">
-                    <button class="btn btn-dark">Avaliar...</button>
+                    <a href="/{{ $client->id }}">
+                    <button class="btn btn-dark"><ion-icon name='add'></ion-icon>Mais...</button>
                 </a>
                 </td>
                 
@@ -49,6 +55,14 @@
          
         </tbody>
         @endforeach
+        @if(count($clients) == 0)
+        <div id="null">
+      
+        <p class="text-center">Não há ninguem cadastrado aqui...<ion-icon name="sad"></ion-icon>
+        </p>
+       
+       </div>
+       @endif
     </table>
  </section>
  @endsection
