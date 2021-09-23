@@ -3,11 +3,23 @@
 @section('title', 'Lista de Usuários')
 @section('content')
 
-<section>
 
-    <h2>
-    <i class="fa fa-users"></i><span>Listar Usuários</span>
-    </h2>
+<section>
+    <div id="search-container" class="col-md-12">
+        <h1 class="text-center"><ion-icon name="search"></ion-icon>Busque por alguem...</h1>
+        <form action="/" method="GET">
+            <input type="text" id="search" name="search" class="form-control" placeholder="Procure por alguem aqui..." autofocus>
+        </form>
+    </div>
+    @if($search)
+    <h2 class="text-center">
+        <i class="fa fa-users"></i><span>Você buscou por:</span>
+        </h2>
+    @else
+    <h2 class="text-center">
+        <i class="fa fa-users"></i><span>Lista de Usuários</span>
+        </h2>
+    @endif
 </section>
  <section class="content">
     <div class="box">
@@ -25,7 +37,7 @@
                 <th class="text-center"><ion-icon name='list'></ion-icon>NOME:</th>
                 <th class="text-center"><ion-icon name='list'></ion-icon>SOBRENOME:</th>
                 <th class="text-center"><ion-icon name='at'></ion-icon>EMAIL:</th>
-                <th class="text-center"><ion-icon name='phone-portrait'></ion-icon>TELEFONE:</th>
+                <th class="text-center"><ion-icon name='logo-whatsapp'></ion-icon>TELEFONE:</th>
                 <th class="text-center"><ion-icon name='people'></ion-icon>GENERO:</th>
                 <th class="text-center"><ion-icon name='information'></ion-icon>OUTRAS INFORMAÇÕES:</th>
                 <th class='text-center'><ion-icon name='construct'></ion-icon>AÇÕES:</th>
@@ -55,12 +67,14 @@
          
         </tbody>
         @endforeach
-        @if(count($clients) == 0)
+        @if(count($clients) == 0 && $search)
         <div id="null">
-      
-        <p class="text-center">Não há ninguem cadastrado aqui...<ion-icon name="sad"></ion-icon>
-        </p>
-       
+        <p class="text-center">Não foi possível encontrar ninguem com o nome {{ $search }}... </p>
+        <p><a href="/" class="btn btn-dark">Ver todos os usuarios ao invés disso??</a></p>
+       </div>
+       @elseif(count($clients) == 0)
+       <div id="null">
+        <p class="text-center">Não há ninguem cadastrado aqui...<ion-icon name="sad"></ion-icon></p>
        </div>
        @endif
     </table>

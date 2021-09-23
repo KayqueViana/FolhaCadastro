@@ -8,7 +8,7 @@
               <div id="info-container" class="col-md-6">
                 <h1><ion-icon name="code-working"></ion-icon>{{ $client->name }} {{ $client->surname}}</h1>
                 <p class="client-email"><ion-icon name="at"></ion-icon>{{ $client->email}}</p>
-                <p class="client-email"><ion-icon name="phone-portrait"></ion-icon>{{ $client->cell}}</p>
+                <p class="client-email"><ion-icon name="logo-whatsapp"></ion-icon>{{ $client->cell}}</p>
                 <p class="client-email"><ion-icon name="people"></ion-icon>{{ $client->gender}}</p>
                 <p class="client-email"><ion-icon name="mail-open"></ion-icon>{{ $client->text}}</p>
                 <p class="client-email"><ion-icon name="business"></ion-icon>Cep: {{ $client->cep }} - Rua: {{ $client->adress }} - Bairro: {{ $client->neighborhood }}</p>

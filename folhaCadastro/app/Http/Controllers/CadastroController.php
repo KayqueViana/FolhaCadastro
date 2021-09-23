@@ -10,9 +10,21 @@ class CadastroController extends Controller
 {
     public function lista(){
 
-        $clients = Client::all();
+        $search = request('search');
 
-            return view("clientes.listar_clientes", ['clients' => $clients])->with('msg2', 'Não há ninguem cadastrado aqui...');
+        if($search) {
+
+          $clients = Client::where([
+
+              ['name', 'like', '%'.$search.'%']
+
+          ])->get();
+
+        }else{
+          $clients = Client::all();
+        }
+
+            return view("clientes.listar_clientes", ['clients' => $clients, 'search' => $search]);
     }
 
     public function adress(){

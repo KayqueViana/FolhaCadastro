@@ -4,6 +4,7 @@
 
 @section('content')
  <section class="container">
+    
     <div class="box">
         <div class="box-header">
             <div class="box-title">
