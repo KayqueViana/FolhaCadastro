@@ -15,7 +15,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Bona+Nova&display=swap" rel="stylesheet">
         <!--Javascript da aplicação-->
         <link rel="stylesheet" href="/css/style.css">
-        <script type="text/javascript" src="/js/consulta-end.js"></script>
+        <script type="text/javascript" src="/js/consulta_end.js"></script>
         <script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
         <script type="text/javascript" src="/js/bootstrap.min.js"></script>
         <script type='text/javascript' src="/js/jquery.mask.min.js"></script>
