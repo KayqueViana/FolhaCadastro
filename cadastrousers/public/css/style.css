@@ -1,0 +1,96 @@
+
+* {
+    font-family: 'Bona Nova', serif;
+}
+
+#navbar img {
+    width: 40px;
+}
+
+.navbar-nav {
+    font-weight: lighter;
+}
+
+#info-container{
+    margin-top: 30px;
+}
+
+#info-container h1 {
+    font-size: 36px;
+    font-weight: 900;
+}
+
+#info-container p {
+    margin: 0;
+    font-size: 18px;
+    display: flex;
+}
+
+#info-container ion-icon{
+    color: #693b9e;
+    margin-right: 5px;
+}
+
+.navbar-nav {
+    padding: 5px 0;
+}
+
+#navbar a {
+    font-size: 15px;
+    color: #757575;
+}
+
+#navbar a:hover {
+    color: #F2A340;
+}
+
+#img{
+    margin-left: 20px;
+    float: left;
+}
+
+#copy {
+    margin-left: 20px;
+}
+#buttons {
+    margin-top: 10px;
+}
+.msg{
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    width: 100%;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 10px;
+}
+
+#null {
+    background-color: #fabfbffd;
+    color: #ee1010;
+    border: 1px solid #f8c8c1;
+    width: 100%;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 10px;
+}
+
+footer {
+    text-align: center;
+    background-color: #353E48;
+    color: #fff;
+    padding: 30px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+.fa-users{
+       padding: 20px;
+}
+
+footer p {
+    margin-bottom: 0;
+}
