@@ -34,6 +34,7 @@
     <table class="table table-striped table-sl">
         <thead>
             <tr>
+                <th class="text-center"><ion-icon name='finger-print'></ion-icon>ID:</th>
                 <th class="text-center"><ion-icon name='list'></ion-icon>NOME:</th>
                 <th class="text-center"><ion-icon name='list'></ion-icon>SOBRENOME:</th>
                 <th class="text-center"><ion-icon name='at'></ion-icon>EMAIL:</th>
@@ -46,6 +47,7 @@
         @foreach ($clients as $client)
         <tbody>
             <tr>
+                <td class="text-center">{{ $client->id }}</td>
                 <td class='text-center'>{{$client->name}}</td>
                 <td class="text-center">{{$client->surname}}</td>
                 <td class="text-center">{{$client->email}}</td>
@@ -59,7 +61,7 @@
                 @endif
                 <td class="text-center">
                     <a href="/{{ $client->id }}">
-                    <button class="btn btn-dark"><ion-icon name='add'></ion-icon>Mais...</button>
+                    <button class="btn btn-dark"><ion-icon name='more'></ion-icon>Mais...</button>
                 </a>
                 </td>
                 
@@ -69,8 +71,9 @@
         @endforeach
         @if(count($clients) == 0 && $search)
         <div id="null">
-        <p class="text-center">Não foi possível encontrar ninguem com o nome {{ $search }}... </p>
-        <p><a href="/" class="btn btn-dark">Ver todos os usuarios ao invés disso??</a></p>
+        <p class="text-center">Não foi possível encontrar ninguem com o nome {{ $search }}...
+        <a href="/" class="btn btn-dark">Ver todos??</a>
+    </p>
        </div>
        @elseif(count($clients) == 0)
        <div id="null">

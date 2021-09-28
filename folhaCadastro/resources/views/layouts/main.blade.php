@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="pt-br">
     <head>
+        <link rel="shortcut icon" href="/img/Register.ico">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -15,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Bona+Nova&display=swap" rel="stylesheet">
         <!--Javascript da aplicação-->
         <link rel="stylesheet" href="/css/style.css">
-        <script type="text/javascript" src="/js/consulta-end.js"></script>
+        <script type="text/javascript" src="/js/consulta_end.js"></script>
         <script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
         <script type="text/javascript" src="/js/bootstrap.min.js"></script>
         <script type='text/javascript' src="/js/jquery.mask.min.js"></script>
@@ -27,7 +28,7 @@
         </script>
     </head>
     <body>
-       
+        
         <header>
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="collapse navbar-collapse" id="navbar">

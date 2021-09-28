@@ -18,5 +18,4 @@ use App\Http\Controllers\CadastroController;
 Route::get('/criarUsuario', [CadastroController::class, 'registro']);
 Route::get('/', [CadastroController::class, 'lista']);
 Route::post('/criarUsuario', [CadastroController::class, 'store']);
-Route::get("/adressPage", [CadastroController::class, 'adress']);
 Route::get('/{id}', [CadastroController::class, 'show']);

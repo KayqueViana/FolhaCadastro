@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Client extends Model
+class Adress extends Model
 {
     use HasFactory;
 
-    public function adress(){
-        return $this->belongsTo('App\Models\Adress');
+    public function clients(){
+        return $this->hasMany('App\Models\Client');
     }
 }

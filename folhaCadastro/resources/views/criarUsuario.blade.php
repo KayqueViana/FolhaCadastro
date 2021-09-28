@@ -33,7 +33,7 @@
                         </div>
                         <div class="col-md-12">
                             <label for="text">UM POUCO SOBRE VOCÊ:</label>
-                            <input class="form-control" id="text" name="text" type="textarea" required placeholder="Digite uma mensagem legal..." autofocus>
+                            <input class="form-control" id="text" name="text" type="textarea" placeholder="Digite uma mensagem legal..." autofocus>
                            </div>
                         <div class="col-md-12">
                         <label for="gender">GENERO:</label>
@@ -63,7 +63,7 @@
                          <label for="uf">ESTADO:</label>
                          <input class="form-control" id="uf" name="uf" type="text" required placeholder="Digite seu estado..." autofocus>
                         </div>
-                       
+                        
                     </div>
                     <div class="row" id="buttons">
                         <div class="col text-right">
