@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Criar Usuário')
+@section('title', 'Editando: ' . $client->name)
 
 @section('content')
  <section class="container">
@@ -8,72 +8,75 @@
     <div class="box">
         <div class="box-header">
             <div class="box-title">
-                <h2 class="text-center"><i class="fa fa-list"></i>Cadastrar Usuario</h2>
+                <h2 class="text-center"><i class="fa fa-list"></i>Editando: {{ $client->name }}</h2>
             </div>
             <hr size="3" width="65%">
             <div class="box-body">
-                <form action="/criarUsuario" method="post" enctype="multipart/form-data">
+                <form action="/update/{{ $client->id }}" method="post" enctype="multipart/form-data">
                     @csrf
-                    <div class="col-md-12">
+                    @method('PUT')
+                    <div class="row">
                         <label for="img"><ion-icon name="images"></ion-icon>IMAGEM:</label>
                         <input type="file" id="img" name='img' class='form-control-file'>
+                
                     </div>
+                   
                     <div class="row">
                         <div class="col-md-12">
                          <label for="name"><ion-icon name="information-circle"></ion-icon>PRIMEIRO NOME:</label>
-                         <input class="form-control" id="name" name="name" type="text" required placeholder="Digite seu primeiro nome..." autofocus>
+                         <input class="form-control" id="name" name="name" type="text" required placeholder="Digite seu primeiro nome..." value="{{ $client->name}}" autofocus>
                         </div>
                         <div class="col-md-12">
                          <label for="sobrenome"><ion-icon name="information-circle"></ion-icon>SOBRENOME:</label>
-                         <input class="form-control" id="surname" name="surname" type="text" required placeholder="Digite seu sobrenome..." autofocus>
+                         <input class="form-control" id="surname" name="surname" type="text" required placeholder="Digite seu sobrenome..." value="{{ $client->surname}}" autofocus>
                         </div>
                         <div class="col-md-12">
                          <label for="email"><ion-icon name="at"></ion-icon>EMAIL:</label>
-                         <input class="form-control" id="email" name="email" type="email" required placeholder="Digite aqui seu email..." autofocus>
+                         <input class="form-control" id="email" name="email" type="email" required placeholder="Digite aqui seu email..." value="{{ $client->email}}" autofocus>
                         </div>
                         <div class="col-md-12">
                          <label for="phone"><ion-icon name="phone-portrait"></ion-icon>TELEFONE:</label>
-                         <input class="form-control" id="cell" name="cell" type="tel" required placeholder="Digite seu telefone..." autofocus>
+                         <input class="form-control" id="cell" name="cell" type="tel" required placeholder="Digite seu telefone..." value="{{ $client->cell}}" autofocus>
                         </div>
                         <div class="col-md-12">
                             <label for="text">UM POUCO SOBRE VOCÊ:</label>
-                            <input class="form-control" id="text" name="text" type="textarea" placeholder="Digite uma mensagem legal..." autofocus>
+                            <input class="form-control" id="text" name="text" type="textarea" placeholder="Digite uma mensagem legal..." value="{{ $client->text}}" autofocus>
                            </div>
                         <div class="col-md-12">
                         <label for="gender"><ion-icon name="male"></ion-icon>GENERO:<ion-icon name="female"></ion-icon></label>
-                         <select name="gender" id="gender" class="form-control" required autofocus>
-                            <option value="0">Masculino</option>
-                            <option value="1">Feminino</option>
-                            <option value="2">Prefiro não informar</option>
+                         <select name="gender" id="gender" class="form-control" required autofocus value="{{ $client->gender}}">
+                            <option value="0" {{$client->gender == 0 ? "selected":"selected"}}>Masculino</option>
+                            <option value="1" {{$client->gender == 1 ? "selected":"selected"}}>Feminino</option>
+                            <option value="2" {{$client->gender == 2 ? "selected":"selected"}}>Prefiro não informar</option>
                          </select>
                         </div>
                         <div class="col-md-4">
                          <label for="cep"><ion-icon name="business"></ion-icon>CEP:</label>
-                         <input class="form-control" id="cep" name="cep" type="text" onblur="pesquisacep(this.value);" required placeholder="00.000-000..." autofocus>
+                         <input class="form-control" id="cep" name="cep" type="text" onblur="pesquisacep(this.value);" required placeholder="00.000-000..." value="{{ $client->cep}}" autofocus>
                         </div>
                         <div class="col-md-4">
                          <label for="adress"><ion-icon name="business"></ion-icon>RUA:</label>
-                         <input class="form-control" id="adress" name="adress" type="text" required placeholder="Digite sua rua..." autofocus>
+                         <input class="form-control" id="adress" name="adress" type="text" required placeholder="Digite sua rua..." value="{{ $client->adress}}" autofocus>
                         </div>
                         <div class="col-md-4">
                          <label for="neighborhood"><ion-icon name="business"></ion-icon>BAIRRO:</label>
-                         <input class="form-control" id="neighborhood" name="neighborhood" type="text" required placeholder="Digite seu bairro..." autofocus>
+                         <input class="form-control" id="neighborhood" name="neighborhood" type="text" required placeholder="Digite seu bairro..." value="{{ $client->neighborhood}}" autofocus>
                         </div>
                         <div class="col-md-12">
                          <label for="city"><ion-icon name="business"></ion-icon>CIDADE:</label>
-                         <input class="form-control" id="city" name="city" type="text" required placeholder="Digite sua cidade..." autofocus>
+                         <input class="form-control" id="city" name="city" type="text" required placeholder="Digite sua cidade..." value="{{ $client->city}}" autofocus>
                         </div>
                         <div class="col-md-12">
                          <label for="uf"><ion-icon name="business"></ion-icon>ESTADO:</label>
-                         <input class="form-control" id="uf" name="uf" type="text" required placeholder="Digite seu estado..." autofocus>
+                         <input class="form-control" id="uf" name="uf" type="text" required placeholder="Digite seu estado..." value="{{ $client->uf}}" autofocus>
                         </div>
                         
                     </div>
                     <div class="row" id="buttons">
                         <div class="col text-right">
-                            <a href="index.php" type="reset" class="btn btn-danger"><ion-icon name="exit"></ion-icon>Cancelar</a>
+                            <a href="/" type="reset" class="btn btn-danger"><ion-icon name="exit"></ion-icon>Cancelar</a>
                             <button type="reset" name="clear" class='btn btn-primary'><ion-icon name="trash"></ion-icon>Limpar</button>
-                            <button type="submit" name='confirm' class="btn btn-success"><ion-icon name="cloud-done"></ion-icon>Confirmar</button>
+                            <button type="submit" class="btn btn-success"><ion-icon name="cloud-done"></ion-icon>Confirmar</button>
                          </div>
                     </div>
                 </form>

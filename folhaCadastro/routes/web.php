@@ -19,3 +19,6 @@ Route::get('/criarUsuario', [CadastroController::class, 'registro']);
 Route::get('/', [CadastroController::class, 'lista']);
 Route::post('/criarUsuario', [CadastroController::class, 'store']);
 Route::get('/{id}', [CadastroController::class, 'show']);
+Route::delete('/{id}', [CadastroController::class, 'destroy']);
+Route::get('/clientes/edit/{id}', [CadastroController::class, 'edit']);
+Route::put('/update/{id}', [CadastroController::class, 'update']);

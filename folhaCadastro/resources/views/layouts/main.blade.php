@@ -43,9 +43,6 @@
                             <li class="nav-item">
                                 <a href="/" class="nav-link">Lista de Usuários</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="/adressPage" class="nav-link">Página de Endereços</a>
-                            </li>
                         </ul>
                 </div>
             </nav>

@@ -15,6 +15,7 @@
     <h2 class="text-center">
         <i class="fa fa-users"></i><span>Você buscou por:</span>
         </h2>
+        <p class="text-center"><a href="/" class="btn btn-dark">Ver todos??</a></p>
     @else
     <h2 class="text-center">
         <i class="fa fa-users"></i><span>Lista de Usuários</span>
@@ -47,7 +48,7 @@
         @foreach ($clients as $client)
         <tbody>
             <tr>
-                <td class="text-center">{{ $client->id }}</td>
+                <td class="text-center">{{$client->id}}</td>
                 <td class='text-center'>{{$client->name}}</td>
                 <td class="text-center">{{$client->surname}}</td>
                 <td class="text-center">{{$client->email}}</td>
@@ -64,7 +65,14 @@
                     <button class="btn btn-dark"><ion-icon name='more'></ion-icon>Mais...</button>
                 </a>
                 </td>
-                
+                <td class="text-center">
+                    <a href="/clientes/edit/{{ $client->id }}" class="btn btn-warning edit-btn"><ion-icon name="create"></ion-icon>Editar</a>
+                    <form action="/{{ $client->id }}" method="post" id="form-delete">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger delete-btn"><ion-icon name="trash"></ion-icon>Deletar</button>
+                    </form>
+                </td>
             </tr>
          
         </tbody>
