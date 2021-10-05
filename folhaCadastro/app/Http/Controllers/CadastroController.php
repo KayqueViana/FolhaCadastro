@@ -74,7 +74,7 @@ class CadastroController extends Controller
       public function destroy($id){
         Client::findOrFail($id)->delete();
 
-        return redirect('/')->with('msg', 'Usuário deletado com sucesso!');
+        return redirect('/')->with('msg2', 'Usuário deletado com sucesso!');
       }
 
       public function edit($id){
@@ -90,5 +90,9 @@ class CadastroController extends Controller
 
 
         return redirect('/')->with('msg', 'Usuário editado com sucesso!');
+      }
+
+      public function none(){
+        
       }
 }

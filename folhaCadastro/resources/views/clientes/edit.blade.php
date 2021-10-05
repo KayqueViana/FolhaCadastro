@@ -8,16 +8,17 @@
     <div class="box">
         <div class="box-header">
             <div class="box-title">
-                <h2 class="text-center"><i class="fa fa-list"></i>Editando: {{ $client->name }}</h2>
+                <h2 class="text-center"><ion-icon name="create"></ion-icon>Editando: {{ $client->name }}</h2>
             </div>
-            <hr size="3" width="65%">
+            <hr size="3" width="65%" class="linha">
             <div class="box-body">
                 <form action="/update/{{ $client->id }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-                    <div class="row">
+                    <div class="col-md-12">
                         <label for="img"><ion-icon name="images"></ion-icon>IMAGEM:</label>
                         <input type="file" id="img" name='img' class='form-control-file'>
+                        <img src="/img/images/{{ $client->img }}" alt="{{ $client->name }}" id="edit-img">
                 
                     </div>
                    

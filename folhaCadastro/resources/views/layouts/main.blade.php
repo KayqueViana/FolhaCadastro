@@ -15,17 +15,19 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bona+Nova&display=swap" rel="stylesheet">
         <!--Javascript da aplicação-->
-        <link rel="stylesheet" href="/css/style.css">
+      
         <script type="text/javascript" src="/js/consulta_end.js"></script>
         <script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
         <script type="text/javascript" src="/js/bootstrap.min.js"></script>
         <script type='text/javascript' src="/js/jquery.mask.min.js"></script>
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){         
                 $("#cell").mask("(00) 00000-0009")
                 $("#cep").mask("00.000-000")
             })
         </script>
+          <link rel="stylesheet" href="/css/style.css">
     </head>
     <body>
         
@@ -51,15 +53,20 @@
             <main>
                     @if(session('msg'))
                      <p class="msg">{{ session('msg') }}</p>
-                    @endif
+                    @elseif(session('msg2'))
+                    <p class="msg2">{{ session('msg2') }}</p>
+                   @endif
+                
                     @yield('content')
             </main>
+
+            
+              
+     
          
-    <div id="copy">
         <footer>
          <p>Folha de Cadastro &copy; 2021 - Kayque Viana</p>
         </footer>
-    </div>
-        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+   
     </body>
 </html>

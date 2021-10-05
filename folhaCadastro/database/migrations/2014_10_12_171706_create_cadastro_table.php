@@ -20,13 +20,13 @@ class CreateCadastroTable extends Migration
             $table->string('email', 50);
             $table->string('cell', 35);
             $table->boolean('gender', 3);
-            $table->string('text');
+            $table->string('text', 255)->nullable();
             $table->string('cep', 12);
             $table->string('adress', 255);
             $table->string('neighborhood', 255);
             $table->string('city', 255);
             $table->string('uf', 255);
-            $table->string('img');
+            $table->string('img', 255)->nullable();
             $table->timestamps();
         });
     }

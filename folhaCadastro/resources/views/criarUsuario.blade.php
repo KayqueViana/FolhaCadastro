@@ -8,9 +8,9 @@
     <div class="box">
         <div class="box-header">
             <div class="box-title">
-                <h2 class="text-center"><i class="fa fa-list"></i>Cadastrar Usuario</h2>
+                <h2 class="text-center"><ion-icon name="clipboard"></ion-icon>Cadastrar Usuario</h2>
             </div>
-            <hr size="3" width="65%">
+            <hr size="3" width="65%" class="linha">
             <div class="box-body">
                 <form action="/criarUsuario" method="post" enctype="multipart/form-data">
                     @csrf

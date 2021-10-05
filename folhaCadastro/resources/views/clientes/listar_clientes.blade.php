@@ -6,28 +6,32 @@
 
 <section>
     <div id="search-container" class="col-md-12">
-        <h1 class="text-center"><ion-icon name="search"></ion-icon>Busque por alguem...</h1>
-        <form action="/" method="GET">
+        <h1 class="text-center"><ion-icon name="search"></ion-icon>Busque um nome</h1>
+    </div>
+     <div class="col-md-10">
+        <form action="/" method="GET"  id="search-form">
             <input type="text" id="search" name="search" class="form-control" placeholder="Procure por alguem aqui..." autofocus>
+            <button type="submit" class="btn btn-info" name="search-b" id="search-b"><ion-icon name="checkmark-circle-outline"></ion-icon>Pesquisar...</button>
         </form>
+        
     </div>
     @if($search)
     <h2 class="text-center">
-        <i class="fa fa-users"></i><span>Você buscou por:</span>
+       <span><ion-icon name="contacts"></ion-icon>Você buscou por: "{{$search}}"</span>
         </h2>
         <p class="text-center"><a href="/" class="btn btn-dark">Ver todos??</a></p>
     @else
     <h2 class="text-center">
-        <i class="fa fa-users"></i><span>Lista de Usuários</span>
+        <span><ion-icon name="contacts"></ion-icon>Lista de Usuários</span>
         </h2>
     @endif
 </section>
- <section class="content">
+ <section class="content container">
     <div class="box">
     <div class="box-header with-border">
         <div class="row margin-bottom-20">
             <div class="col-md-12 text-right">
-            <a href="/criarUsuario" title="Novo Cadastro"><i class="fa fa-plus-square"></i>Inserir Clientes</a>
+            <a href="/criarUsuario" id="criarUser" class="btn btn-dark"><ion-icon name="add-circle"></ion-icon>Inserir Clientes</a>
             </div>
         </div>
     </div>
@@ -78,14 +82,13 @@
         </tbody>
         @endforeach
         @if(count($clients) == 0 && $search)
-        <div id="null">
-        <p class="text-center">Não foi possível encontrar ninguem com o nome {{ $search }}...
-        <a href="/" class="btn btn-dark">Ver todos??</a>
-    </p>
+        <div id="alert-text">
+        <h3 class="text-center">Não foi possível encontrar ninguem com o nome {{ $search }}...
+        </h3>
        </div>
        @elseif(count($clients) == 0)
-       <div id="null">
-        <p class="text-center">Não há ninguem cadastrado aqui...<ion-icon name="sad"></ion-icon></p>
+       <div id="alert-text">
+        <h3 class="text-center">Não há ninguem cadastrado aqui...<ion-icon name="sad"></ion-icon></h3>
        </div>
        @endif
     </table>
