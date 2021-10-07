@@ -17,8 +17,8 @@
                     @method('PUT')
                     <div class="col-md-12">
                         <label for="img"><ion-icon name="images"></ion-icon>IMAGEM:</label>
-                        <input type="file" id="img" name='img' class='form-control-file'>
-                        <img src="/img/images/{{ $client->img }}" alt="{{ $client->name }}" id="edit-img">
+                        <input type="file" id="img" name="img" class='form-control-file'>
+                        <img src="/img/images/{{ $client->img }}" alt="{{ $client->name }}.img" id="edit-img">
                 
                     </div>
                    

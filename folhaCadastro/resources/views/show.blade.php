@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', $client->name)
+@section('title',  $client->name)
 
 @section('content')
   <div class="col-md-10 offset-md-1">
@@ -23,7 +23,7 @@
                 @endif
 
                 @if( $client->text == null)
-                <h6 class="client-text"><ion-icon name="mail-open"></ion-icon><u>Nenhum texto foi adicionado aqui</u></h6>
+                <h6 class="client-text"><ion-icon name="mail-open"></ion-icon><u>Nenhum texto foi adicionado aqui</u><ion-icon name="sad"></ion-icon></h6>
                 @else
                 <p class="client-text"><ion-icon name="mail-open"></ion-icon>{{ $client->text}}</p>
                 @endif

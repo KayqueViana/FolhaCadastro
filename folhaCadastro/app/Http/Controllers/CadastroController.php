@@ -25,7 +25,11 @@ class CadastroController extends Controller
           $clients = Client::all();
         }
 
-            return view("clientes.listar_clientes", ['clients' => $clients,'search' => $search]);
+        if(count($clients) == 0 && $search){
+          return redirect('/')->with('msg2', 'Não foi possível encontrar ninguem com esse nome...');
+        }
+          return view("clientes.listar_clientes", ['clients' => $clients,'search' => $search]);
+        
     }
 
    public function registro(){
@@ -87,7 +91,6 @@ class CadastroController extends Controller
       public function update(Request $request){
 
         Client::findOrFail($request->id)->update($request->all());
-
 
         return redirect('/')->with('msg', 'Usuário editado com sucesso!');
       }

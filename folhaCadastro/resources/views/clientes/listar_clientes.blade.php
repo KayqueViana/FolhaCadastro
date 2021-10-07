@@ -6,14 +6,13 @@
 
 <section>
     <div id="search-container" class="col-md-12">
-        <h1 class="text-center"><ion-icon name="search"></ion-icon>Busque um nome</h1>
+        <h1 class="text-center"><ion-icon name="search"></ion-icon>Buscar por...</h1>
     </div>
-     <div class="col-md-10">
-        <form action="/" method="GET"  id="search-form">
-            <input type="text" id="search" name="search" class="form-control" placeholder="Procure por alguem aqui..." autofocus>
-            <button type="submit" class="btn btn-info" name="search-b" id="search-b"><ion-icon name="checkmark-circle-outline"></ion-icon>Pesquisar...</button>
+     <div class="search-box col-md-8">
+        <form action="/" method="GET" id="search-form">
+            <input type="text" id="search" name="search" class="search-text col-md-11 search-text" placeholder="Busque aqui...">
+            <button type="submit" class="btn search-btn"><ion-icon name="search"></ion-icon></button>
         </form>
-        
     </div>
     @if($search)
     <h2 class="text-center">
@@ -22,37 +21,37 @@
         <p class="text-center"><a href="/" class="btn btn-dark">Ver todos??</a></p>
     @else
     <h2 class="text-center">
-        <span><ion-icon name="contacts"></ion-icon>Lista de Usuários</span>
+        <span><ion-icon name="contacts"></ion-icon>Usuários Cadastrados</span>
         </h2>
     @endif
 </section>
  <section class="content container">
     <div class="box">
-    <div class="box-header with-border">
+    <div class="box-header">
         <div class="row margin-bottom-20">
             <div class="col-md-12 text-right">
-            <a href="/criarUsuario" id="criarUser" class="btn btn-dark"><ion-icon name="add-circle"></ion-icon>Inserir Clientes</a>
+            <a href="/criarUsuario" id="criarUser" class="btn btn-warning"><ion-icon name="add-circle"></ion-icon>Inserir Novo</a>
             </div>
         </div>
     </div>
     </div>
-    <table class="table table-striped table-sl">
-        <thead>
+    <table class="table table-striped">
+        <thead class="thead-dark thead-place">
             <tr>
-                <th class="text-center"><ion-icon name='finger-print'></ion-icon>ID:</th>
-                <th class="text-center"><ion-icon name='list'></ion-icon>NOME:</th>
-                <th class="text-center"><ion-icon name='list'></ion-icon>SOBRENOME:</th>
-                <th class="text-center"><ion-icon name='at'></ion-icon>EMAIL:</th>
-                <th class="text-center"><ion-icon name='logo-whatsapp'></ion-icon>TELEFONE:</th>
-                <th class="text-center"><ion-icon name='people'></ion-icon>GENERO:</th>
-                <th class="text-center"><ion-icon name='information'></ion-icon>OUTRAS INFORMAÇÕES:</th>
-                <th class='text-center'><ion-icon name='construct'></ion-icon>AÇÕES:</th>
+                <th class="text-center" scope="col"><ion-icon name='finger-print'></ion-icon>ID:</th>
+                <th class="text-center" scope="col"><ion-icon name='list'></ion-icon>NOME:</th>
+                <th class="text-center" scope="col"><ion-icon name='list'></ion-icon>SOBRENOME:</th>
+                <th class="text-center" scope="col"><ion-icon name='at'></ion-icon>EMAIL:</th>
+                <th class="text-center" scope="col"><ion-icon name='logo-whatsapp'></ion-icon>TELEFONE:</th>
+                <th class="text-center" scope="col"><ion-icon name='people'></ion-icon>GENERO:</th>
+                <th class="text-center" scope="col"><ion-icon name='information'></ion-icon>OUTRAS INFORMAÇÕES:</th>
+                <th class="text-center" scope="col"><ion-icon name='construct'></ion-icon>AÇÕES:</th>
             </tr>
         </thead>
         @foreach ($clients as $client)
         <tbody>
             <tr>
-                <td class="text-center">{{$client->id}}</td>
+                <td class="text-center" scope="row">{{$client->id}}</td>
                 <td class='text-center'>{{$client->name}}</td>
                 <td class="text-center">{{$client->surname}}</td>
                 <td class="text-center">{{$client->email}}</td>
@@ -81,12 +80,7 @@
          
         </tbody>
         @endforeach
-        @if(count($clients) == 0 && $search)
-        <div id="alert-text">
-        <h3 class="text-center">Não foi possível encontrar ninguem com o nome {{ $search }}...
-        </h3>
-       </div>
-       @elseif(count($clients) == 0)
+       @if(count($clients) == 0)
        <div id="alert-text">
         <h3 class="text-center">Não há ninguem cadastrado aqui...<ion-icon name="sad"></ion-icon></h3>
        </div>
