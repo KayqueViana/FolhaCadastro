@@ -13,6 +13,7 @@ class CadastroController extends Controller
 {
     public function lista(){
         $search = request('search');
+
         if($search){
 
           $clients = Client::where([
@@ -22,7 +23,9 @@ class CadastroController extends Controller
           ])->get();//get indica que você quer pegar os dados de busca;
 
         }else{
-          $clients = Client::all();
+
+          $clients = Client::paginate(7);
+
         }
 
         if(count($clients) == 0 && $search){
@@ -77,7 +80,6 @@ class CadastroController extends Controller
 
       public function destroy($id){
         Client::findOrFail($id)->delete();
-
         return redirect('/')->with('msg2', 'Usuário deletado com sucesso!');
       }
 
@@ -90,12 +92,19 @@ class CadastroController extends Controller
 
       public function update(Request $request){
 
-        Client::findOrFail($request->id)->update($request->all());
+        $data = $request->all();
+
+        if($request->hasFile('img') && $request->file('img')->isValid()){
+          $requestImg = $request->img;
+          $extension = $requestImg->extension();
+          $imageName = md5($requestImg->getClientOriginalName().strtotime("now")).".".$extension;
+          $request->img->move(public_path('img/images'), $imageName);
+          $data['img'] = $imageName;
+          }
+
+        Client::findOrFail($request->id)->update($data);
 
         return redirect('/')->with('msg', 'Usuário editado com sucesso!');
       }
 
-      public function none(){
-        
-      }
 }

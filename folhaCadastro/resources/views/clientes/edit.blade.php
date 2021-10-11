@@ -73,8 +73,8 @@
                         </div>
                         
                     </div>
-                    <div class="row" id="buttons">
-                        <div class="col text-right">
+                    <div class="row">
+                        <div class="col text-right buttons">
                             <a href="/" type="reset" class="btn btn-danger"><ion-icon name="exit"></ion-icon>Cancelar</a>
                             <button type="reset" name="clear" class='btn btn-primary'><ion-icon name="trash"></ion-icon>Limpar</button>
                             <button type="submit" class="btn btn-success"><ion-icon name="cloud-done"></ion-icon>Confirmar</button>

@@ -3,11 +3,23 @@
 @section('title',  $client->name)
 
 @section('content')
+
+  @if($client->img == null)
+  <a href="/clientes/edit/{{ $client->id }}">
   <div class="col-md-10 offset-md-1">
-      <div class="row">
-        <div id="img-container" class="col-md-6">
-          <img src="/img/images/{{ $client->img }}" class="img-fuid" alt="{{ $client->name }}">
-        </div>
+    <div class="row">
+      <div id="img-container" class="col-md-6">
+        <img src="/img/noImage.png" class="img-fuid" alt="Default.img">
+      </div>
+    </a>
+  @else
+ 
+  <div class="col-md-10 offset-md-1">
+    <div class="row">
+      <div id="img-container" class="col-md-6">
+        <img src="/img/images/{{ $client->img }}" class="img-fuid" alt="{{ $client->name }}">
+      </div>
+      @endif
               <div id="info-container" class="col-md-6">
                 <h1><ion-icon name="code-working"></ion-icon>{{ $client->name }} {{ $client->surname}}</h1>
                 <p class="client-id"><ion-icon name="finger-print"></ion-icon><b>ID do Usuário: {{ $client->id}} </b></p>
@@ -22,7 +34,7 @@
                 <p class="client-gender"><ion-icon name="people"></ion-icon>Não Informado</p>
                 @endif
 
-                @if( $client->text == null)
+                @if($client->text == null)
                 <h6 class="client-text"><ion-icon name="mail-open"></ion-icon><u>Nenhum texto foi adicionado aqui</u><ion-icon name="sad"></ion-icon></h6>
                 @else
                 <p class="client-text"><ion-icon name="mail-open"></ion-icon>{{ $client->text}}</p>

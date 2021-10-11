@@ -21,12 +21,14 @@
         <script type="text/javascript" src="/js/bootstrap.min.js"></script>
         <script type='text/javascript' src="/js/jquery.mask.min.js"></script>
         <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
         <script type="text/javascript">
             $(document).ready(function(){         
                 $("#cell").mask("(00) 00000-0009")
                 $("#cep").mask("00.000-000")
             })
         </script>
+
           <link rel="stylesheet" href="/css/style.css">
     </head>
     <body>
@@ -63,10 +65,10 @@
             
               
      
-         
+         <a href="https://github.com/KayqueViana">
         <footer>
          <p>Folha de Cadastro &copy; 2021 - Kayque Viana</p>
         </footer>
-   
+    </a>
     </body>
 </html>

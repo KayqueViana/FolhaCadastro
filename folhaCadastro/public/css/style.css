@@ -28,33 +28,15 @@
     font-weight: lighter;
 }
 
-#info-container{
-    margin-top: 30px;
-}
-
-#info-container h1 {
-    font-size: 36px;
-    font-weight: 900;
-}
-
 .img-preview{
-    width: 100px;
-    margin-top: 20px;
-}
-
-#info-container p {
-    margin: 0;
-    font-size: 18px;
-    display: flex;
+    width: 1200px;
+    margin-top: 10px;
 }
 
 #form-delete{
     display: inline-block;
 }
-#info-container ion-icon{
-    color: #693b9e;
-    margin-right: 5px;
-}
+
 
 .navbar-nav {
     padding: 5px 0;
@@ -69,21 +51,37 @@
     color: #F2A340;
 }
 
+/*Links da página*/
+
+a:link {
+
+    text-decoration: none;
+}
+
+.go-links{
+    color: hsl(253, 92%, 51%);
+}
+
+a:active{
+    color: #e91919;
+}
+
 #img{
     margin-left: 20px;
     float: left;
 }
 
 #edit-img{
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 70px;
+    margin-bottom: 6px;
 }
 
 #copy {
     margin-left: 20px;
 }
-#buttons {
-    margin-top: 10px;
+.buttons {
+    margin-top: 2px;
     margin-bottom: 10px;
 }
 .msg{
@@ -94,6 +92,7 @@
     margin-bottom: 0;
     text-align: center;
     padding: 10px;
+    transition: ease-out;
 }
 
 #criarUser{
@@ -117,17 +116,36 @@
 }
 
 /*Show page */
+#info-container{
+    margin-top: 30px;
+}
+
+#info-container h1 {
+    font-size: 36px;
+    font-weight: 900;
+}
+#info-container p {
+    margin: 0;
+    font-size: 18px;
+    display: flex;
+}
+#info-container ion-icon{
+    color: #693b9e;
+    margin-right: 5px;
+}
 
 #img-container {
     margin-top:30px;
 }
 
 #img-container img {
+    margin-right: 2px;
     border-radius: 10px;
     width: 750px;
     height: 400px;
 
 }
+/*-------*/
 
 .linha{
     display: block;
@@ -175,20 +193,31 @@
 /* Footer da página */
 
 footer {
+    position: fixed;
     text-align: center;
     background-color: #353E48;
     color: #fff;
-    position: fixed;
+    height: 59px;
     bottom: 0;
     padding: 20px;
     width: 100%;
-    margin-top: 30px;
+    margin-top: 24px;
 }
 
 footer p {
     margin-bottom: 0;
 }
 
+.h-5{
+    padding: 0;
+    width: 20px;
+    transform: translate3d(0px, 5px, 0px);
+}
+
+.text-sm{
+    margin-top: 5px;
+    padding: 0;
+}
 /*hovers da pag */
 
 footer:hover {
@@ -199,6 +228,6 @@ footer:hover {
     color: #F2A340;
 }
 
-.thead-place th:hover{
+#element:hover{
     color: #F2A340;
 }
