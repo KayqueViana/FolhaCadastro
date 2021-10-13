@@ -3,34 +3,53 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 use App\Models\Client;
 use App\Models\Adress;
 
 
-
 class CadastroController extends Controller
 {
-    public function lista(){
-        $search = request('search');
+    public function lista(Request $request){
 
-        if($search){
+      $search = request('search');
+      $clients = Client::all();
+      if(isset($_GET['search'])){
+       
+        $clients = DB::table('clients')->where('name', 'like', '%' .$search. '%')->paginate(6);
 
-          $clients = Client::where([
+      }elseif(count($clients) == 0 && $search){
 
-              ['name', 'like', '%'.$search.'%']
+        $clients = Client::paginate(5);
+        return redirect('/')->with('msg2', 'Não foi possível encontrar ninguem com esse nome...');
 
-          ])->get();//get indica que você quer pegar os dados de busca;
+      }elseif(count($clients) == 0){
 
-        }else{
+        return redirect('/')->with('msg2', 'Não há ninguem cadastrado aqui...');
 
-          $clients = Client::paginate(7);
+      }else{
 
-        }
+        $clients = Client::paginate(7);
 
-        if(count($clients) == 0 && $search){
-          return redirect('/')->with('msg2', 'Não foi possível encontrar ninguem com esse nome...');
-        }
+      }
+
+      /*$search = request('search');
+
+      if($search){
+
+        $clients = DB::table('clients')->where([
+
+            ['name', 'like', '%'.$search.'%']
+
+        ])->get()->paginate(7);//get indica que você quer pegar os dados de busca;
+
+      }else{
+
+        $clients = Client::paginate(7);
+
+      }*/
+
+        
           return view("clientes.listar_clientes", ['clients' => $clients,'search' => $search]);
         
     }

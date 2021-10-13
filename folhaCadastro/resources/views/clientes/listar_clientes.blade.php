@@ -4,7 +4,7 @@
 @section('content')
 
 
-<section>
+<section class="animate__animated animate__fadeIn">
     <div id="search-container" class="col-md-12">
         <h1 class="text-center"><ion-icon name="search"></ion-icon>Buscar por...</h1>
     </div>
@@ -25,7 +25,7 @@
         </h2>
     @endif
 </section>
- <section class="content container">
+ <section class="content container animate__animated animate__fadeIn">
     <div class="box">
     <div class="box-header">
         <div class="row margin-bottom-20">
@@ -80,11 +80,6 @@
          
         </tbody>
         @endforeach
-       @if(count($clients) == 0)
-       <div id="alert-text">
-        <h3 class="text-center">Não há ninguem cadastrado aqui...<ion-icon name="sad"></ion-icon></h3>
-       </div>
-       @endif
     </table>
         {!! $clients->links() !!}
 

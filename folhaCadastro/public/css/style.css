@@ -20,6 +20,10 @@
    width: 100%;
 }
 
+input{
+    margin-bottom: 4px;
+}
+
 .table-sl ion-icon {
     font-size: 20px;
     margin-right: 5px;
@@ -117,7 +121,7 @@ a:active{
 
 /*Show page */
 #info-container{
-    margin-top: 30px;
+    margin-top: 85px;
 }
 
 #info-container h1 {
@@ -140,8 +144,9 @@ a:active{
 
 #img-container img {
     margin-right: 2px;
-    border-radius: 10px;
-    width: 750px;
+    margin-left: 85px;
+    border-radius: 50%;
+    width: 500px;
     height: 400px;
 
 }
