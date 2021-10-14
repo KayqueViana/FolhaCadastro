@@ -16,7 +16,7 @@ class CadastroController extends Controller
       $clients = Client::all();
       if(isset($_GET['search'])){
        
-        $clients = DB::table('clients')->where('name', 'like', '%' .$search. '%')->paginate(6);
+        $clients = DB::table('clients')->where('name', 'like', '%' .$search. '%')->paginate(7);
 
       }elseif(count($clients) == 0 && $search){
 
@@ -32,31 +32,17 @@ class CadastroController extends Controller
         $clients = Client::paginate(7);
 
       }
-
-      /*$search = request('search');
-
-      if($search){
-
-        $clients = DB::table('clients')->where([
-
-            ['name', 'like', '%'.$search.'%']
-
-        ])->get()->paginate(7);//get indica que você quer pegar os dados de busca;
-
-      }else{
-
-        $clients = Client::paginate(7);
-
-      }*/
-
         
           return view("clientes.listar_clientes", ['clients' => $clients,'search' => $search]);
         
     }
 
    public function registro(){
+    
+    $search = request('search');
+    $clients = Client::all();
 
-    return view("criarUsuario");
+    return view("criarUsuario", ['clients' => $clients, 'search' => $search]);
    }
 
      public function store(Request $request){
@@ -84,9 +70,6 @@ class CadastroController extends Controller
           }
 
         $cliente->save();
-        
-       
-       
 
         return redirect('/')->with('msg', 'Usuário cadastrado com sucesso!');
       }
@@ -104,9 +87,11 @@ class CadastroController extends Controller
 
       public function edit($id){
 
+        $search = request('search');
+        $clients = Client::all();
         $client = Client::findOrFail($id);
 
-        return view('clientes.edit', ['client' => $client]);
+        return view('clientes.edit', ['client' => $client, 'search' => $search, 'clients' => $clients]);
       }
 
       public function update(Request $request){

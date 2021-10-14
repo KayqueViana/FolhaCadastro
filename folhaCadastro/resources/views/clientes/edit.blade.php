@@ -28,7 +28,7 @@
                          <input class="form-control" id="name" name="name" type="text" required placeholder="Digite seu primeiro nome..." value="{{ $client->name}}" autofocus>
                         </div>
                         <div class="col-md-12">
-                         <label for="sobrenome" class="animate__animated animate__bounceIn>"<ion-icon name="information-circle"></ion-icon>SOBRENOME:</label>
+                         <label for="sobrenome" class="animate__animated animate__bounceIn"> <ion-icon name="information-circle"></ion-icon>SOBRENOME:</label>
                          <input class="form-control" id="surname" name="surname" type="text" required placeholder="Digite seu sobrenome..." value="{{ $client->surname}}" autofocus>
                         </div>
                         <div class="col-md-12">
@@ -75,9 +75,9 @@
                     </div>
                     <div class="row">
                         <div class="col text-right buttons">
-                            <a href="/" type="reset" class="btn btn-danger animate__animated animate__bounceIn"><ion-icon name="exit"></ion-icon>Cancelar</a>
-                            <button type="reset" name="clear" class='btn btn-primary animate__animated animate__bounceIn'><ion-icon name="trash"></ion-icon>Limpar</button>
-                            <button type="submit" class="btn btn-success animate__animated animate__bounceIn"><ion-icon name="cloud-done"></ion-icon>Confirmar</button>
+                            <a href="/" type="reset" class="btn btn-danger animate__animated animate__bounceIn" id="Btn-edit"><ion-icon name="exit"></ion-icon>Cancelar</a>
+                            <button type="reset" name="clear" class='btn btn-primary animate__animated animate__bounceIn' id="Btn-edit"><ion-icon name="trash"></ion-icon>Limpar</button>
+                            <button type="submit" class="btn btn-success animate__animated animate__bounceIn" id="Btn-edit"><ion-icon name="cloud-done"></ion-icon>Confirmar</button>
                          </div>
                     </div>
                 </form>

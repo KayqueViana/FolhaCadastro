@@ -71,9 +71,9 @@
                     </div>
                     <div class="row" id="buttons">
                         <div class="col text-right">
-                            <a href="index.php" type="reset" class="btn btn-danger animate__animated animate__bounceIn"><ion-icon name="exit"></ion-icon>Cancelar</a>
-                            <button type="reset" name="clear" class='btn btn-primary animate__animated animate__bounceIn'><ion-icon name="trash"></ion-icon>Limpar</button>
-                            <button type="submit" name='confirm' class="btn btn-success animate__animated animate__bounceIn"><ion-icon name="cloud-done"></ion-icon>Confirmar</button>
+                            <a href="index.php" type="reset" class="btn btn-danger animate__animated animate__bounceIn" id="Btn"><ion-icon name="exit"></ion-icon>Cancelar</a>
+                            <button type="reset" name="clear" class='btn btn-primary animate__animated animate__bounceIn' id="Btn"><ion-icon name="trash"></ion-icon>Limpar</button>
+                            <button type="submit" name='confirm' class="btn btn-success animate__animated animate__bounceIn" id="Btn"><ion-icon name="cloud-done"></ion-icon>Confirmar</button>
                          </div>
                     </div>
                 </form>

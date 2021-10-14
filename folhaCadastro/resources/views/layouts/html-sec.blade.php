@@ -67,25 +67,11 @@
 
             
               
-       @if(count($clients) >= 0 && $search)
-       <a href="https://github.com/KayqueViana">
+     
+         <a href="https://github.com/KayqueViana">
         <footer class="footer-second">
          <p>Folha de Cadastro &copy; {{date("Y")}} - Kayque Viana</p>
         </footer>
     </a>
-      @elseif(count($clients) < 7)
-      <a href="https://github.com/KayqueViana">
-        <footer class="footer-second">
-         <p>Folha de Cadastro &copy; {{date("Y")}} - Kayque Viana</p>
-        </footer>
-    </a>
-      @else
-      <a href="https://github.com/KayqueViana">
-        <footer>
-         <p>Folha de Cadastro &copy; {{date("Y")}} - Kayque Viana</p>
-        </footer>
-    </a>
-      @endif
-
     </body>
 </html>

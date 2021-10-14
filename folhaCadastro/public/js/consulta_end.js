@@ -1,9 +1,9 @@
 function limpa_formulário_cep() {
     //Limpa valores do formulário de cep.
-    document.getElementById('adress').value="...";
-            document.getElementById('neighborhood').value="...";
-            document.getElementById('city').value="...";
-            document.getElementById('uf').value="...";
+    document.getElementById('adress').value="";
+            document.getElementById('neighborhood').value="";
+            document.getElementById('city').value="";
+            document.getElementById('uf').value="";
 }
 
 function meu_callback(conteudo) {

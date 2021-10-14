@@ -21,7 +21,7 @@
 }
 
 input{
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
 
 .table-sl ion-icon {
@@ -76,9 +76,10 @@ a:active{
 }
 
 #edit-img{
-    width: 90px;
-    height: 70px;
+    width: 50px;
+    height: 40px;
     margin-bottom: 6px;
+    border-radius: 50%;
 }
 
 #copy {
@@ -133,7 +134,7 @@ a:active{
     font-size: 18px;
     display: flex;
 }
-#info-container ion-icon{
+#icons{
     color: #693b9e;
     margin-right: 5px;
 }
@@ -198,6 +199,18 @@ a:active{
 /* Footer da página */
 
 footer {
+    position: relative;
+    text-align: center;
+    background-color: #353E48;
+    color: #fff;
+    height: 55px;
+    bottom: 0;
+    padding: 20px;
+    width: 100%;
+    margin-top: 26px;
+}
+
+.footer-second {
     position: fixed;
     text-align: center;
     background-color: #353E48;
@@ -206,11 +219,20 @@ footer {
     bottom: 0;
     padding: 20px;
     width: 100%;
-    margin-top: 24px;
+    box-sizing: border-box;
 }
 
 footer p {
     margin-bottom: 0;
+}
+
+#Btn{
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+#Btn-{
+    margin-top: 4px;
 }
 
 .h-5{
